@@ -10,6 +10,6 @@ router.delete('/user/:username', deleteUser);
 
 router.get('/posts', getPosts);
 router.post('/post', postPost);
-router.delete('/post/:username', deletePost);
+router.delete('/post/:_id', deletePost);
 
 export default router;

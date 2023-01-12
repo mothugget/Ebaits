@@ -12,7 +12,10 @@ const userSchema = new Schema({
     },  
     email: String,
     country: String,
-    posts: [String],
+    posts: [{
+        type: Schema.Types.ObjectId,
+        ref: "Post"
+    }],
     picid: String
 });
 

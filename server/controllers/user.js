@@ -1,6 +1,7 @@
 'use strict';
 
 import User from '../models/user.js';
+import Post from '../models/post.js';
 
 
 const getUsers = async (req, res) => {
@@ -17,9 +18,9 @@ const getUsers = async (req, res) => {
 const postUser = async (req, res) => {
     try {
         const newUser = req.body.newUser;
-        await User.create(newUser);
+        const resUser = await User.create(newUser);
         res.status(201);
-        res.send(newUser);
+        res.send(resUser);
     } catch (e) {
         console.log('error ', e);
         res.status(500)
@@ -30,10 +31,13 @@ const postUser = async (req, res) => {
 
 const deleteUser = async (req, res) => {
     try {
-        await User.deleteOne(req.params);
-        console.log(req.params)
+        const resUser = await User.findOne(req.params);
+        resUser.posts.forEach(async (postId) => {
+            await Post.deleteOne({ _id: postId.toString() });
+        });
+        const confirmation = await User.deleteOne(req.params);
         res.status = 200;
-        res.send(req.params)
+        res.send(confirmation);
     } catch (err) {
         res.body = err;
         res.status = 500;

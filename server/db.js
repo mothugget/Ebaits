@@ -7,7 +7,7 @@ const DB_NAME = process.env.DB_NAME || 'ebait';
 
 mongoose.connect(
     `mongodb://localhost:${DB_PORT}/${DB_NAME}`,
-    { useNewUrlParser: true, useUnifiedTopology: true },
+    { useNewUrlParser: true, useUnifiedTopology: true},
     (err) => {
         if (err) {
             console.log(`Failed to connect to database ${err}`); 
