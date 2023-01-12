@@ -10,9 +10,9 @@ mongoose.connect(
     { useNewUrlParser: true, useUnifiedTopology: true },
     (err) => {
         if (err) {
-            console.log(` Failed to connect to database ${err}`); 
+            console.log(`Failed to connect to database ${err}`); 
         } else {
-            console.log(` Database connected @ port ${DB_PORT}`); 
+            console.log(`Database connected @ port ${DB_PORT}`); 
         }
     }
     );

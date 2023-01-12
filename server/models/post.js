@@ -4,7 +4,7 @@ import mongoose from '../db.js';
 
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+const postSchema = new Schema({
     username: {
         type: String,
         required: true,
@@ -19,4 +19,4 @@ const userSchema = new Schema({
 const Post = mongoose.model('Post', postSchema);
 
 
-export default User;
+export default Post;
