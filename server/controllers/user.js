@@ -2,6 +2,7 @@
 
 import User from '../models/user.js';
 import Post from '../models/post.js';
+import chalk from 'chalk';
 
 
 const getUsers = async (req, res) => {
@@ -10,7 +11,7 @@ const getUsers = async (req, res) => {
         res.status(200);
         res.send(usr);
     } catch (e) {
-        console.log('error ', e);
+        console.log(chalk.red('getUser'), e);
         res.sendStatus(500);
     }
 };
@@ -22,7 +23,7 @@ const postUser = async (req, res) => {
         res.status(201);
         res.send(resUser);
     } catch (e) {
-        console.log('error ', e);
+        console.log(chalk.red('postUser'), e);
         res.status(500)
         res.send(e);
 
@@ -38,8 +39,9 @@ const deleteUser = async (req, res) => {
         const confirmation = await User.deleteOne(req.params);
         res.status = 200;
         res.send(confirmation);
-    } catch (err) {
-        res.body = err;
+    } catch (e) {
+        console.log(chalk.red('deleteUser'), e)
+        res.body = e;
         res.status = 500;
     }
 };

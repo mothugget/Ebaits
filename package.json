@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Marketplace for baitbuilders",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "test"
   },
@@ -16,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/mothugget/Ebaits/issues"
   },
-  "homepage": "https://github.com/mothugget/Ebaits#readme"
+  "homepage": "https://github.com/mothugget/Ebaits#readme",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "gulp": "^4.0.2",
+    "map-stream": "^0.0.7"
+  }
 }
