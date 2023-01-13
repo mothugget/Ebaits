@@ -9,7 +9,7 @@ export default function Post(props) {
 	return (
 		<div className="Post">
 			{postId}
-			<img className="post-image" src={defaultThumbnailImg} alt="Thumbnail image" />
+			<img className="post-image" src={defaultThumbnailImg} alt="Post" />
 		</div>
 	)
 }

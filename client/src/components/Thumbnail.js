@@ -14,7 +14,7 @@ export default function Thumbnail(props) {
 		<div className="Thumbnail">
 			<button className='thumbnail-button' onClick={thumbnailClick}>
 				{props.postId}
-				<img className="thumbnail-image" src={defaultThumbnailImg} alt="Thumbnail image" />
+				<img className="thumbnail-image" src={defaultThumbnailImg} alt="Thumbnail" />
 			</button>
 		</div>
 	)
