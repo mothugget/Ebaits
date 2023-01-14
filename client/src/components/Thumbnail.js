@@ -4,16 +4,16 @@ import defaultThumbnailImg from '../images/default/altPostImg.jpg'
 import { ContentContext } from '../contentProvider'
 
 export default function Thumbnail(props) {
-	const { content, setContent, setPostId} = useContext(ContentContext);
+	const { setContent, setPost} = useContext(ContentContext);
 	const thumbnailClick = () => {
 		setContent('Post');
-		setPostId(props.postId);
+		setPost(props.post);
 	}
 
 	return (
 		<div className="Thumbnail">
 			<button className='thumbnail-button' onClick={thumbnailClick}>
-				{props.postId}
+				{props.post.country}
 				<img className="thumbnail-image" src={defaultThumbnailImg} alt="Thumbnail" />
 			</button>
 		</div>

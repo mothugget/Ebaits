@@ -4,11 +4,11 @@ import defaultThumbnailImg from '../images/default/altPostImg.jpg'
 import { ContentContext } from '../contentProvider'
 
 export default function Post(props) {
-	const { content, setContent, postId, setProfileId } = useContext(ContentContext);
+	const { setContent, post, setProfileId } = useContext(ContentContext);
 
 	return (
 		<div className="Post">
-			{postId}
+			{post.country}
 			<img className="post-image" src={defaultThumbnailImg} alt="Post" />
 		</div>
 	)

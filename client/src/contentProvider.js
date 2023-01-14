@@ -5,10 +5,10 @@ const ContentContext = createContext()
 function ContentProvider({ children }) {
     const [content, setContent] = useState('Dashboard');
     const [profileId, setProfileId] = useState('');
-    const [postId, setPostId] = useState('')
+    const [post, setPost] = useState('')
 
     return (
-        <ContentContext.Provider value={{ content, setContent, profileId, setProfileId, postId, setPostId }}>
+        <ContentContext.Provider value={{ content, setContent, profileId, setProfileId, post, setPost }}>
             {children}
         </ContentContext.Provider>
     )

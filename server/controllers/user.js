@@ -5,11 +5,14 @@ import Post from '../models/post.js';
 import chalk from 'chalk';
 
 
-const getUsers = async (req, res) => {
+const getUser = async (req, res) => {
     try {
-        const usr = await User.find();
+        let resUser = await User.findOne(req.params).populate("posts");
         res.status(200);
-        res.send(usr);
+        !resUser && (resUser ={
+            error: "No such user"
+        });
+        res.send(resUser);
     } catch (e) {
         console.log(chalk.red('getUser'), e);
         res.sendStatus(500);
@@ -48,5 +51,5 @@ const deleteUser = async (req, res) => {
 
 
 
-export { getUsers, postUser, deleteUser };
+export { getUser, postUser, deleteUser };
 

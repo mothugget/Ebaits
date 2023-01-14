@@ -5,9 +5,12 @@ import User from '../models/user.js';
 
 const getPosts = async (req, res) => {
     try {
-        const post = await Post.find().populate("user");
+        const post = await Post.find()
+            .sort({createdAt:1})
+            .limit(10)
+            .populate("user");
         res.status(200);
-        res.send(post);
+        res.send(post.reverse());
     } catch (e) {
         console.log('error ', e);
         res.sendStatus(500);

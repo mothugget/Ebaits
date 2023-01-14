@@ -1,10 +1,10 @@
 'use strict';
 import express from 'express';
-import { getUsers, postUser, deleteUser } from './controllers/user.js';
+import { getUser, postUser, deleteUser } from './controllers/user.js';
 import { getPosts, postPost, deletePost } from './controllers/post.js';
 const router = express.Router();
 
-router.get('/users', getUsers);
+router.get('/user/:username', getUser);
 router.post('/user', postUser);
 router.delete('/user/:username', deleteUser);
 
