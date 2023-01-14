@@ -9,11 +9,10 @@ export default function Thumbnail(props) {
 		setContent('Post');
 		setPost(props.post);
 	}
-
 	return (
 		<div className="Thumbnail">
 			<button className='thumbnail-button' onClick={thumbnailClick}>
-				{props.post.country}
+				{props.post.user.country}
 				<img className="thumbnail-image" src={defaultThumbnailImg} alt="Thumbnail" />
 			</button>
 		</div>

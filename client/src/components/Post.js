@@ -8,7 +8,7 @@ export default function Post(props) {
 
 	return (
 		<div className="Post">
-			{post.country}
+			{post.user.country}
 			<img className="post-image" src={defaultThumbnailImg} alt="Post" />
 		</div>
 	)

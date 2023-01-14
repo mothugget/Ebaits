@@ -5,10 +5,10 @@ import apiService from '../apiService'
 
 export default function Dashboard(props) {
 	const [dashboardPosts, setDashboardPosts] = useState([])
-	useEffect(  () => {
-		let dashboardPosts =  apiService.populateDashboard();
-		console.log(dashboardPosts)
-		setDashboardPosts(apiService.populateDashboard())
+	useEffect(() => {
+		apiService.populateDashboard().then(
+			(posts) => setDashboardPosts(posts)
+		);
 	}, [])
 
 

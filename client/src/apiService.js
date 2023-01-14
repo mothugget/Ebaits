@@ -1,8 +1,8 @@
-const BASE_URL = 'http://localhost:3001';
+const BASE_URL = 'http://localhost:3030';
 
 const apiService = {
     populateDashboard: () => {
-        return fetch(`${BASE_URL}/register`, {
+        return fetch(`${BASE_URL}/posts`, {
             method: 'GET',
             mode: 'cors',
             headers: { 'Content-Type': 'application/json' },
