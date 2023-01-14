@@ -2,7 +2,10 @@ const { src, dest } = require('gulp');
 const map = require('map-stream');
 const path = require('path');
 
+
+//adds the react component template to any empty js file in the src directory 
 function populateComponents() {
+    let i = 0;
     return src('client/src/components/*.js')
         .pipe(map(function (file, cb) {
             if (file.contents.toString() === "" && path.extname(file.path) === ".js") {
@@ -17,13 +20,16 @@ export default function ${compName}(props) {
 \t)
 }`
                 );
-            } else {
-                console.log('nope')
+                i++;
+                console.log(i,' components created');
             }
             cb(null, file)
         }))
         .pipe(dest('client/src/components/'))
 }
+
+
+
 // OBS: DANGEROUS will clear all your components
 // // function delComp() {
 // //     return src('client/src/components/*.js')
