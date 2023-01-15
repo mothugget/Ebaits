@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 
 import { OverlayContext } from '../overlayProvider'
 import Navbar from "./Navbar";
+import NavbarButton from './NavbarButton';
 import Menu from './Menu';
 import NewPost from './NewPost';
 import SignUp from './SignUp';
@@ -22,7 +23,7 @@ export default function Overlay(props) {
 		case 'Menu':
 			return (
 				<div className="Overlay">
-					<div className='blur-bg'/>
+					<NavbarButton />
 					<Menu/>	
 				</div>
 			)

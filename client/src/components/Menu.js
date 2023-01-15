@@ -1,5 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
-
+import { useState, useEffect, useContext } from 'react'
 import SearchInput from "./SearchInput";
 import { ContentContext } from '../contentProvider'
 import { OverlayContext } from '../overlayProvider'
