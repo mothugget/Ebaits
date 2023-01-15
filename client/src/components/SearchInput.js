@@ -5,7 +5,7 @@ import { ContentContext } from '../contentProvider'
 import { OverlayContext } from '../overlayProvider'
 
 export default function SearchInput(props) {
-	const [error, setError] = useState('');
+	const [error, setError] = useState(' ');
 
 	const { setProfile, setContent } = useContext(ContentContext);
 	const { setOverlay } = useContext(OverlayContext);
@@ -18,7 +18,7 @@ export default function SearchInput(props) {
 				if (res.error) {
 					setError(res.error);
 				} else {
-					setError('');
+					setError(' ');
 					setOverlay('Navbar');
 					setProfile(res);
 					setContent('Profile')
@@ -29,7 +29,7 @@ export default function SearchInput(props) {
 
 	return (
 		<div className="SearchInput">
-			<form onSubmit={handleSubmit}>
+			<form className="seach-form" onSubmit={handleSubmit}>
 				<input type="text" name="search" placeholder="Baitmaker" />
 				<button type="submit"> Search </button>
 			</form>

@@ -9,7 +9,6 @@ import ThumbnailList from './ThumbnailList';
 export default function Profile(props) {
 	const { setContent, profile } = useContext(ContentContext);
 	const { setOverlay } = useContext(OverlayContext);
-	console.log(profile)
 	return (
 		<div className="Profile">
 			<div className="profile-info-container">

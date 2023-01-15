@@ -90,7 +90,7 @@
       width: min(95vw, 500px);
     }
 
-    .Profile{
+    .Profile {
       display: flex;
       flex-direction: column;
     }
@@ -115,8 +115,12 @@
     .Overlay {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       background-color: rgba(0, 0, 0, 0);
       position: fixed;
+      width: 100vw;
+      height: 100vw;
       z-index: 10;
     }
 
@@ -197,12 +201,17 @@
     }
 
     .Menu {
-      height: 80vh;
-      width: 80vw;
-      top: 10vw;
-      left: 10vw;
-      background-color: white;
+      display: flex;
+      flex-direction: column;
       position: fixed;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+          
+      height: fit-content;
+      width: fit-content;
+      padding: 15px;
+      background-color: white;
       border-style: solid;
       border-radius: 10px;
       border-width: 0px;
@@ -210,4 +219,27 @@
       background-color: white;
       box-shadow: 0px 2px 10px rgb(95, 95, 95);
       z-index: 10;
+    }
+
+    .SearchInput{
+      display:flex;
+      flex-direction: column;
+      width: 300px;
+    }
+
+    .search-form{
+      display: flex;
+      flex-direction: row;
+    }
+
+.SearchInput input {
+width: 200px;
+}
+
+.SearchInput button {
+  width:80px;
+}
+
+    .search-error{
+      height: 18px;
     }
