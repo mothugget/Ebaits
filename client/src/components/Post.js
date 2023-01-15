@@ -23,7 +23,7 @@ export default function Post(props) {
 			}
 		)
 	}
-
+ 
 	return (
 		<div className="Post">
 			<button className='baitbuilder' onClick={profileClick}>{post.user.username}</button>

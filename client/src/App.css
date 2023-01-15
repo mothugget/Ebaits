@@ -30,7 +30,7 @@
       display: flex;
       justify-content: center;
       z-index: 1;
-      margin-top: 55px;
+      margin-top: 63px;
     }
 
     .category-text {
@@ -86,7 +86,7 @@
 
     .header {
       width: 100vw;
-      height: 55px;
+      height: 63px;
       background-color: white;
       border-style: none;
       position: fixed;
@@ -96,6 +96,7 @@
 
     .logo-home-button {
       padding: 0;
+      margin:0;
       background-color: white;
       border-style: none;
       position: absolute;
@@ -103,6 +104,7 @@
     }
 
     .logo-image {
+      margin-top: 5px;
       height: 50px
     }
 
