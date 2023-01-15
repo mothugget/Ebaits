@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 
 
 import apiService from '../apiService';
-import defaultPostImg from '../images/default/altPostImgBlack.jpg'
+import defaultPostImg from '../images/default/altPostImg.jpg'
 import { ContentContext } from '../contentProvider'
 import { OverlayContext } from '../overlayProvider'
 

@@ -65,12 +65,10 @@
     .country-emoji {
       position: relative;
       color: white;
+      font-size: 10vw;
       width: 0;
-      left: -10vw;
-      top: 40vw;
-      -webkit-text-stroke-width: 0.03em;
-      -webkit-text-stroke-color: rgb(0, 0, 0);
-      text-shadow: 0px 0px 2px rgb(255, 255, 255);
+      left: -15vw;
+      top: 32vw;
       z-index: 5;
     }
 

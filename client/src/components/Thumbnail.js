@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 
-import defaultThumbnailImg from '../images/default/altPostImgBlack.jpg'
+import defaultThumbnailImg from '../images/default/altPostImg.jpg'
 import { ContentContext } from '../contentProvider'
 
 export default function Thumbnail(props) {
@@ -9,11 +9,22 @@ export default function Thumbnail(props) {
 		setContent('Post');
 		setPost(props.post);
 	}
+
+	// getFlagEmoji function yoinked from https://dev.to/jorik/country-code-to-flag-emoji-a21
+
+	function getFlagEmoji(countryCode) {
+		const codePoints = countryCode
+			.toUpperCase()
+			.split('')
+			.map(char => 127397 + char.charCodeAt());
+		return String.fromCodePoint(...codePoints);
+	}
+	let emoji = getFlagEmoji('SE')
 	return (
 		<div className="Thumbnail">
 			<button className='thumbnail-button' onClick={thumbnailClick}>
 				<img className="thumbnail-image" src={defaultThumbnailImg} alt="Thumbnail" />
-				<div className='country-emoji'>{props.post.user.country}</div>
+				{props.source==='dash'&&<div className='country-emoji'>{emoji}</div>}
 			</button>
 		</div>
 	)

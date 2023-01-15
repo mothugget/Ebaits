@@ -14,14 +14,7 @@ export default function Dashboard(props) {
 
 	return (
 		<div className="Dashboard">
-			<ThumbnailList posts={dashboardPosts}/>
+			<ThumbnailList source={'dash'} posts={dashboardPosts}/>
 		</div>
 	)
-	// return (
-	// 	<div className="Dashboard">
-	// 		{dashboardPosts.map((post) =>
-	// 			<Thumbnail key={post._id} post={post} />)
-	// 		}
-	// 	</div>
-	// )
 }
