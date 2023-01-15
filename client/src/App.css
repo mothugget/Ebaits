@@ -42,7 +42,7 @@
       font-size: 24px;
     }
 
-    .Dashboard {
+    .ThumbnailList {
       position: relative;
       left: 0px;
       display: grid;
@@ -79,9 +79,50 @@
       z-index: 1;
     }
 
+    .Post {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
     .post-image {
-      height: 95vw;
-      width: 95vw;
+      height: min(95vw, 500px);
+      width: min(95vw, 500px);
+    }
+
+    .Profile{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-image {
+      width: min(45vw, 300px);
+      height: min(45vw, 300px);
+    }
+
+    .profile-info-container {
+      width: 100vw;
+      height: min(45vw, 300px);
+      display: flex;
+      align-items: center;
+    }
+
+
+    /*                            OVERLAY                                */
+
+
+
+    .Overlay {
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0);
+      position: fixed;
+      z-index: 10;
+    }
+
+    .Overlay-navbar {
+      position: relative;
+      z-index: 10;
     }
 
     .header {
@@ -96,7 +137,7 @@
 
     .logo-home-button {
       padding: 0;
-      margin:0;
+      margin: 0;
       background-color: white;
       border-style: none;
       position: absolute;
@@ -108,20 +149,10 @@
       height: 50px
     }
 
-    .Overlay-navbar {
-      position: relative;
-      z-index: 10;
-    }
 
 
 
-    .Overlay {
-      display: flex;
-      flex-direction: column;
-      background-color: rgba(0, 0, 0, 0);
-      position: fixed;
-      z-index: 10;
-    }
+
 
     .Navbar {
       display: flex;

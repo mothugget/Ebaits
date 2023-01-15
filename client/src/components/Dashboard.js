@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 
-import Thumbnail from './Thumbnail'
-import apiService from '../apiService'
+import Thumbnail from './Thumbnail';
+import ThumbnailList from "./ThumbnailList";
+import apiService from '../apiService';
 
 export default function Dashboard(props) {
 	const [dashboardPosts, setDashboardPosts] = useState([])
@@ -11,12 +12,16 @@ export default function Dashboard(props) {
 		);
 	}, [])
 
-
 	return (
 		<div className="Dashboard">
-			{dashboardPosts.map((post) =>
-				<Thumbnail key={post._id} post={post} />)
-			}
+			<ThumbnailList posts={dashboardPosts}/>
 		</div>
 	)
+	// return (
+	// 	<div className="Dashboard">
+	// 		{dashboardPosts.map((post) =>
+	// 			<Thumbnail key={post._id} post={post} />)
+	// 		}
+	// 	</div>
+	// )
 }
