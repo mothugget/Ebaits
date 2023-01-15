@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 
-import defaultThumbnailImg from '../images/default/altPostImg.jpg'
+import defaultThumbnailImg from '../images/default/altPostImgBlack.jpg'
 import { ContentContext } from '../contentProvider'
 
 export default function Post(props) {

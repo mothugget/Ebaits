@@ -6,7 +6,7 @@ import { ContentContext } from '../contentProvider'
 import { OverlayContext } from '../overlayProvider'
 
 export default function Navbar(props) {
-	const { setContent, setBlur } = useContext(ContentContext);
+	const { setContent } = useContext(ContentContext);
 	const { setOverlay } = useContext(OverlayContext);
 
 	const homeClick	= () => {
@@ -15,7 +15,6 @@ export default function Navbar(props) {
 
 	const hamburgerClick = () => {
 		setOverlay('Menu');
-		setBlur('Content-blur')
 	}
 
 	return (

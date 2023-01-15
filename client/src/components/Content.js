@@ -7,30 +7,27 @@ import Profile from './Profile'
 import Post from './Post';
 
 export default function Content(props) {
-    const { content, blur, setBlur } = useContext(ContentContext);
+    const { content,  } = useContext(ContentContext);
     const { overlay,  } = useContext(OverlayContext)
 
-    if(overlay==='Navbar'){
-        setBlur('Content')
-    }
 
 
     switch (content) {
         case 'Dashboard':
             return (
-                <div className={blur}>
+                <div className={'Content'}>
                     <Dashboard />
                 </div>
             )
         case 'Post':
             return (
-                <div className={blur}>
+                <div className={'Content'}>
                 <Post />
             </div>
             )
         case 'Profile':
             return (
-                <div className={blur}>
+                <div className={'Content'}>
                     <Profile />
                 </div>
             )

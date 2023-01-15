@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 
-import defaultThumbnailImg from '../images/default/altPostImg.jpg'
+import defaultThumbnailImg from '../images/default/altPostImgBlack.jpg'
 import { ContentContext } from '../contentProvider'
 
 export default function Thumbnail(props) {
@@ -12,8 +12,8 @@ export default function Thumbnail(props) {
 	return (
 		<div className="Thumbnail">
 			<button className='thumbnail-button' onClick={thumbnailClick}>
-				{props.post.user.country}
 				<img className="thumbnail-image" src={defaultThumbnailImg} alt="Thumbnail" />
+				<div className='country-emoji'>{props.post.user.country}</div>
 			</button>
 		</div>
 	)
