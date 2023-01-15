@@ -1,4 +1,11 @@
+    @font-face {
+      font-family: Comforta;
+      src: url(fonts/Comfortaa-Bold.ttf);
+    }
+
 .App {
+  font-family: Comforta;
+  font-size: 16px;
   text-align: center;
 }
 
