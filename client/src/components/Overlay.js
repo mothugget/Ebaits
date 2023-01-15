@@ -3,7 +3,6 @@ import { useState, useEffect, useContext } from 'react';
 import { OverlayContext } from '../overlayProvider'
 import Navbar from "./Navbar";
 import Menu from './Menu';
-import SearchResults from './SearchResults';
 import NewPost from './NewPost';
 import SignUp from './SignUp';
 import LogIn from './LogIn';
@@ -16,20 +15,15 @@ export default function Overlay(props) {
 	switch (overlay) {
 		case 'Navbar':
 			return (
-				<div className="Overlay">
+				<div className="Overlay-navbar">
 					<Navbar />
 				</div>
 			)
 		case 'Menu':
 			return (
 				<div className="Overlay">
-					<Menu />
-				</div>
-			)
-		case 'SearchResults':
-			return (
-				<div className="Overlay">
-					<SearchResults />
+					<div className='blur-bg'/>
+					<Menu/>	
 				</div>
 			)
 		case 'NewPost':

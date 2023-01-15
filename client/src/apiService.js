@@ -10,8 +10,14 @@ const apiService = {
             .then((res) => res.json())
             .catch((err) => console.log(err));
     },
-    getProfile: () => {
-
+    getProfile: (username) => {
+        return fetch(`${BASE_URL}/user/${username}`, {
+            method: 'GET',
+            mode: 'cors',
+            headers: { 'Content-Type': 'application/json' },
+        })
+            .then((res) => res.json())
+            .catch((err) => console.log(err));
     },
     createUser: () => {
 

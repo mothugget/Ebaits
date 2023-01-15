@@ -2,10 +2,96 @@
   text-align: center;
 }
 
-.thumbnail-image{
+.Content {
+  margin-top: 55px;
+}
+
+.Content-blur {
+  filter: brightness(2) blur(5px);
+}
+
+.thumbnail-image {
   height: 100px;
 }
 
 .post-image {
-  height: 50vw;
+  height: 95vw;
+}
+
+.header {
+  width: 100vw;
+  height: 50px;
+  background-color: white;
+  border-style: none;
+  position: fixed;
+  top: 0;
+
+}
+
+.logo-home-button {
+  padding: 0;
+  background-color: white;
+  border-style: none;
+  position: absolute;
+  left: 0;
+}
+
+.logo-image {
+  height: 50px
+}
+
+.Overlay {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.Navbar {
+  display: flex;
+  justify-content: center;
+
+}
+
+.footer {
+  width: fit-content;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0);
+  border-style: none;
+  position: fixed;
+  bottom: 5px;
+  box-shadow: 0px 2px 5px lightgray;
+}
+
+.hamburger-image {
+  width: 50px;
+}
+
+.hamburger-button {
+
+  padding: 5px 5px 10px 5px;
+  border-style: solid;
+  border-radius: 10px;
+  background-color: white;
+  border-width: 2px;
+  border-color: rgb(127, 127, 127);
+}
+
+.Menu {
+  height: 80vh;
+  width: 80vw;
+  top: 10vw;
+  left: 10vw;
+  background-color: white;
+  position: fixed;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: rgb(95, 95, 95);
+  background-color: white;
+  box-shadow: 0px 2px 10px rgb(95, 95, 95);
 }
