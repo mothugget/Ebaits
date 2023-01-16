@@ -5,9 +5,11 @@ import apiService from '../apiService'
 import LogoutButton from './LogoutButton'
 import { ContentContext } from '../contentProvider';
 import { OverlayContext } from '../overlayProvider';
+import UploadWidget from './UploadWidget';
 
 export default function NewPost(props) {
 	const [error, setError] = useState('')
+	const [imageURL, setImageURL] = useState('')
 
 	const {
 		currUser,
@@ -27,11 +29,12 @@ export default function NewPost(props) {
 				type: event.target[1].value,
 				length: event.target[2].value,
 				weight: event.target[3].value,
-				imgid: [],
+				imgid: [imageURL],
 			}
 		}
 		apiService.createPost(newPost)
 			.then(res => {
+				console.log(res)
 				setPost(res);
 				setContent('Post');
 				setOverlay('Navbar');
@@ -40,8 +43,9 @@ export default function NewPost(props) {
 
 	return (
 		<div className="NewPost Menu">
+			<div className='title-text'>Post your bait</div>
+			<UploadWidget setImageURL={setImageURL} />
 			<form className='post-form' onSubmit={handleSubmit}>
-				<div className='title-text'>Post your bait</div>
 				<input type="text" name='Name' placeholder='Name' />
 				<input type="text" name='Type' placeholder='Type' />
 				<input type="number" name='Length' placeholder='Length (cm)' />

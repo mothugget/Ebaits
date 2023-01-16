@@ -5,11 +5,14 @@ import apiService from '../apiService';
 import defaultPostImg from '../images/default/altPostImg.jpg'
 import { ContentContext } from '../contentProvider'
 import { OverlayContext } from '../overlayProvider'
+import UploadWidget from './UploadWidget';
 
 
 export default function Post(props) {
 	const { setContent, post, setProfile } = useContext(ContentContext);
 	const { setOverlay } = useContext(OverlayContext);
+
+	const image = props.post.imgid[0]||=defaultPostImg;
 	function profileClick(){
 		apiService.getProfile(post.user.username).then(
 			(res) => {
@@ -17,7 +20,6 @@ export default function Post(props) {
 					console.log(res.error)
 				} else {
 					setOverlay('Navbar');
-					console.log(res)
 					setProfile(res);
 					setContent('Profile')
 				}
