@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { Auth0Provider } from "@auth0/auth0-react";
+import { UserProvider } from './userProvider';
 import { ContentProvider } from './contentProvider'
 import { OverlayProvider } from './overlayProvider'
 
@@ -19,12 +20,12 @@ root.render(
       clientId={clientId}
       redirectUri={window.location.origin}
     >
-      <ContentProvider>
-        <OverlayProvider>
-          <App />
-        </OverlayProvider>
-      </ContentProvider>
-  </Auth0Provider>
+        <ContentProvider>
+          <OverlayProvider>
+            <App />
+          </OverlayProvider>
+        </ContentProvider>
+    </Auth0Provider>
   </React.StrictMode >
 );
 

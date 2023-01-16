@@ -6,7 +6,8 @@ function ContentProvider({ children }) {
     const [blur, setBlur] = useState('Content');
     const [content, setContent] = useState('Dashboard');
     const [profile, setProfile] = useState('');
-    const [post, setPost] = useState('')
+    const [post, setPost] = useState('');
+    const [currUser, setCurrUser] = useState({});
 
     return (
         <ContentContext.Provider value={{
@@ -14,6 +15,7 @@ function ContentProvider({ children }) {
             profile, setProfile,
             post, setPost,
             blur, setBlur,
+            currUser, setCurrUser
         }}>
             {children}
         </ContentContext.Provider>

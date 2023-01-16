@@ -10,7 +10,11 @@ const userSchema = new Schema({
         required: true,
         unique: true
     },  
-    email: String,
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
     country: String,
     posts: [{
         type: Schema.Types.ObjectId,

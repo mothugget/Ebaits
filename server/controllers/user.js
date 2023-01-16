@@ -19,6 +19,8 @@ const getUser = async (req, res) => {
     }
 };
 
+
+
 const postUser = async (req, res) => {
     try {
         const newUser = req.body.newUser;
