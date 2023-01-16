@@ -38,8 +38,15 @@ const apiService = {
             .then((res) => res.json())
             .catch((err) => console.log(err));
     },
-    createPost: () => {
-
+    createPost: (newPost) => {
+        return fetch(`${BASE_URL}/post`, {
+            method: 'POST',
+            mode: 'cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newPost)
+        })
+            .then((res) => res.json())
+            .catch((err) => console.log(err));
     },
     deleteUser: () => {
 

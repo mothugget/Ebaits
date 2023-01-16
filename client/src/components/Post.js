@@ -33,7 +33,6 @@ export default function Post(props) {
 				<span className='category-text'>Type: </span> {post.type} <br />
 				<span className='category-text'>Length: </span> {post.length} cm <br />
 				<span className='category-text'>Weight: </span> {post.weight} g <br />
-				<span className='category-text'>Type: </span> {post.type} <br />
 				<span className='category-text'>Country: </span> {post.user.country} <br />
 			</div>
 		</div>

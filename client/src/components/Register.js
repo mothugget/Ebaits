@@ -4,7 +4,7 @@ import countries from '../countries';
 import apiService from '../apiService'
 import LogoutButton from './LogoutButton'
 import { ContentContext } from '../contentProvider';
-import { OverlayContext } from '../overlayProvider'
+import { OverlayContext } from '../overlayProvider';
 
 
 export default function Register(props) {
@@ -12,7 +12,7 @@ export default function Register(props) {
 
 	const {
 		currUser, setCurrUser,
-		profile, setProfile,
+		setProfile,
 		setContent
 	} = useContext(ContentContext);
 	const { setOverlay } = useContext(OverlayContext);

@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { useAuth0 } from "@auth0/auth0-react"
+import { useAuth0 } from "@auth0/auth0-react";
 
 import Content from './components/Content';
 import Overlay from './components/Overlay';

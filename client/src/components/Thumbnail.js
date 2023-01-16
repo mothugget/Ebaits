@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 
+import countries from '../countries'
 import defaultThumbnailImg from '../images/default/altPostImg.jpg'
 import { ContentContext } from '../contentProvider'
 
@@ -19,7 +20,9 @@ export default function Thumbnail(props) {
 			.map(char => 127397 + char.charCodeAt());
 		return String.fromCodePoint(...codePoints);
 	}
-	let emoji = getFlagEmoji('SE')
+	
+	let emoji = getFlagEmoji(countries[props.post.user.country])
+	
 	return (
 		<div className="Thumbnail">
 			<button className='thumbnail-button' onClick={thumbnailClick}>

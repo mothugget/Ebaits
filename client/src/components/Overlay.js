@@ -29,6 +29,7 @@ export default function Overlay(props) {
 		case 'NewPost':
 			return (
 				<div className="Overlay">
+					<NavbarButton />
 					<NewPost />
 				</div>
 			)
