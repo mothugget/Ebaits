@@ -5,8 +5,7 @@ import Navbar from "./Navbar";
 import NavbarButton from './NavbarButton';
 import Menu from './Menu';
 import NewPost from './NewPost';
-import SignUp from './SignUp';
-import LogIn from './LogIn';
+import Register from './Register';
 import EditUser from './EditUser';
 import DeletePrompt from './DeletePrompt';
 
@@ -33,16 +32,11 @@ export default function Overlay(props) {
 					<NewPost />
 				</div>
 			)
-		case 'SignUp':
+		case 'Register':
 			return (
 				<div className="Overlay">
-					<SignUp />
-				</div>
-			)
-		case 'LogIn':
-			return (
-				<div className="Overlay">
-					<LogIn />
+					<NavbarButton />
+					<Register />
 				</div>
 			)
 		case 'EditUser':
