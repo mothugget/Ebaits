@@ -17,7 +17,6 @@ export default function Content(props) {
         case 'Dashboard':
             return (
                 <div className={'Content'}>
-                    <SignUp/>
                     <Dashboard />
                 </div>
             )
