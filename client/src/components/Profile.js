@@ -9,10 +9,11 @@ import ThumbnailList from './ThumbnailList';
 export default function Profile(props) {
 	const { setContent, profile } = useContext(ContentContext);
 	const { setOverlay } = useContext(OverlayContext);
+	const image = profile.picid ||= defaultProfileImg;
 	return (
 		<div className="Profile">
 			<div className="profile-info-container">
-				<img className='profile-image' src={defaultProfileImg} alt='profile' />
+				<img className='profile-image' src={image} alt='profile' />
 				<div className='profile-info'>
 					<span className='title-text'>{profile.username}</span> <br /><br />
 					<span className='category-text'>Country: </span> {profile.country} <br />

@@ -8,7 +8,6 @@ import { OverlayContext } from '../overlayProvider';
 import UploadWidget from './UploadWidget';
 
 export default function NewPost(props) {
-	const [error, setError] = useState('')
 	const [imageURL, setImageURL] = useState('')
 
 	const {
@@ -34,7 +33,6 @@ export default function NewPost(props) {
 		}
 		apiService.createPost(newPost)
 			.then(res => {
-				console.log(res)
 				setPost(res);
 				setContent('Post');
 				setOverlay('Navbar');

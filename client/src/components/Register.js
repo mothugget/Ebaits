@@ -3,12 +3,14 @@ import { useContext, useState } from 'react';
 import countries from '../countries';
 import apiService from '../apiService'
 import LogoutButton from './LogoutButton'
+import UploadWidget from './UploadWidget';
 import { ContentContext } from '../contentProvider';
 import { OverlayContext } from '../overlayProvider';
 
 
 export default function Register(props) {
 	const [error, setError] = useState('')
+	const [imageURL, setImageURL] = useState('')
 
 	const {
 		currUser, setCurrUser,
@@ -28,7 +30,7 @@ export default function Register(props) {
 				email: currUser.email,
 				country: event.target[1].value,
 				posts: [],
-				picid: ''
+				picid: imageURL
 			},
 		}
 		newUser.newUser.username ?
@@ -48,8 +50,10 @@ export default function Register(props) {
 	}
 	return (
 		<div className="Register Menu" >
+			<div className='title-text'>Register</div>
+			<UploadWidget setImageURL={setImageURL}/>
 			<form className='registration-form' onSubmit={handleSubmit}>
-				<div className='title-text'>Register</div>
+
 				<input type="text" name='Username' placeholder='Username' />
 				<select name='Country' placeholder='Country'>
 					{Object.keys(countries).map(el => {
