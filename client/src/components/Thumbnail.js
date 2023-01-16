@@ -21,7 +21,7 @@ export default function Thumbnail(props) {
 		return String.fromCodePoint(...codePoints);
 	}
 	
-	let emoji = getFlagEmoji(countries[props.post.user.country])
+	let emoji = props.source === 'dash' && getFlagEmoji(countries[props.post.user.country])
 	
 	return (
 		<div className="Thumbnail">

@@ -17,6 +17,7 @@ export default function Post(props) {
 					console.log(res.error)
 				} else {
 					setOverlay('Navbar');
+					console.log(res)
 					setProfile(res);
 					setContent('Profile')
 				}
