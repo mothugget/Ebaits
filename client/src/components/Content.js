@@ -5,6 +5,7 @@ import { OverlayContext } from '../overlayProvider'
 import Dashboard from './Dashboard';
 import Profile from './Profile'
 import Post from './Post';
+import SignUp from './SignUp';
 
 export default function Content(props) {
     const { content,  } = useContext(ContentContext);
@@ -16,6 +17,7 @@ export default function Content(props) {
         case 'Dashboard':
             return (
                 <div className={'Content'}>
+                    <SignUp/>
                     <Dashboard />
                 </div>
             )
