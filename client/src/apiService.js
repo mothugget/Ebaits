@@ -32,7 +32,8 @@ const apiService = {
         return fetch(`${BASE_URL}/user`, {
             method: 'POST',
             mode: 'cors',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json' }, 
+            body: JSON.stringify(newUser)
         })
             .then((res) => res.json())
             .catch((err) => console.log(err));

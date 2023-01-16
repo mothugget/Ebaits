@@ -264,6 +264,6 @@ input, select {
   width: 80px;
 }
 
-.search-error {
+.search-error, .register-error {
   height: 18px;
 }
