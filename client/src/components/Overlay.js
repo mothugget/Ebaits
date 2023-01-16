@@ -35,7 +35,6 @@ export default function Overlay(props) {
 		case 'Register':
 			return (
 				<div className="Overlay">
-					<NavbarButton />
 					<Register />
 				</div>
 			)

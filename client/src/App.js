@@ -18,8 +18,12 @@ function App() {
     isAuthenticated ?
       apiService.getProfileSignin(user.name)
         .then(res => {
-          setCurrUser(res);
-          (res.error === 'No such user')&&setOverlay('Register')
+          if(res.error === 'No such user'){
+            setOverlay('Register');
+            setCurrUser({email:user.name})
+          }else{
+            setCurrUser(res)
+          }
         })
       : setCurrUser({})
   }, [isAuthenticated])
