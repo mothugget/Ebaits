@@ -19,6 +19,7 @@
   "dependencies": {
     "chalk": "^5.2.0",
     "country-codes-list": "^1.6.10",
+    "dotenv": "^16.0.3",
     "gulp": "^4.0.2",
     "map-stream": "^0.0.7"
   }

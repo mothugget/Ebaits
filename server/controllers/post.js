@@ -17,7 +17,7 @@ const getPosts = async (req, res) => {
     }
 };
 
-const postPost = async (req, res) => {
+const createPost = async (req, res) => {
     try {
         const newPost = req.body.newPost;
         const idPost = await Post.create(newPost);
@@ -46,5 +46,5 @@ const deletePost = async (req, res) => {
 
 
 
-export { getPosts, postPost, deletePost };
+export { getPosts, createPost, deletePost };
 

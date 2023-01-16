@@ -5,7 +5,7 @@ export default function LogoutButton(props) {
    
     return (
         isAuthenticated && (
-            <button className="LogoutButton" onClick={() => logout()}>
+            <button className="LogoutButton" onClick={logout}>
                 Sign out
             </button>
         )
