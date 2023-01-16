@@ -20,13 +20,14 @@ export default function Thumbnail(props) {
 			.map(char => 127397 + char.charCodeAt());
 		return String.fromCodePoint(...codePoints);
 	}
-	
+	const image = props.post.imgid[0] ||= defaultThumbnailImg;
+
 	let emoji = props.source === 'dash' && getFlagEmoji(countries[props.post.user.country])
 	
 	return (
 		<div className="Thumbnail">
 			<button className='thumbnail-button' onClick={thumbnailClick}>
-				<img className="thumbnail-image" src={defaultThumbnailImg} alt="Thumbnail" />
+				<img className="thumbnail-image" src={image} alt="Thumbnail" />
 				{props.source==='dash'&&<div className='country-emoji'>{emoji}</div>}
 			</button>
 		</div>

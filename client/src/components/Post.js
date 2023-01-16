@@ -12,7 +12,7 @@ export default function Post(props) {
 	const { setContent, post, setProfile } = useContext(ContentContext);
 	const { setOverlay } = useContext(OverlayContext);
 
-	const image = props.post.imgid[0]||=defaultPostImg;
+	const image = post.imgid[0]||=defaultPostImg;
 	function profileClick(){
 		apiService.getProfile(post.user.username).then(
 			(res) => {
@@ -30,7 +30,7 @@ export default function Post(props) {
 	return (
 		<div className="Post">
 			<button className='baitbuilder' onClick={profileClick}>{post.user.username}</button>
-			<img className="post-image" src={defaultPostImg} alt="Post" />
+			<img className="post-image" src={image} alt="Post" />
 			<div className='post-info'>
 				<span className='title-text'>{post.name}</span> <br /> 
 				<span className='category-text'>Type: </span> {post.type} <br />
