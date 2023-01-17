@@ -28,6 +28,9 @@ export default function Post(props) {
 			}
 		)
 	}
+	//This is ugly. Found bug last minute where you couldnt return to the profile from posts which
+	//were accessed through profile thumbnails. Need this to get username. Annoying  to do an extra api call,
+	//but thems the breaks.
 	useEffect(() => {
 		post.user.username || apiService.getProfileByUserId(post.user).then(res => setUsername(res.username))
 	}, [])
