@@ -48,11 +48,14 @@ const apiService = {
             .then((res) => res.json())
             .catch((err) => console.log(err));
     },
-    deleteUser: () => {
-
-    },
-    deletePost: () => {
-
+    deletePost: (_id) => {
+        return fetch(`${BASE_URL}/post/${_id}`, {
+            method: 'DELETE',
+            mode: 'cors',
+            headers: { 'Content-Type': 'application/json' },
+        })
+            .then((res) => res.json())
+            .catch((err) => console.log(err));
     },
 };
 

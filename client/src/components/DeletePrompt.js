@@ -6,22 +6,40 @@ import { ContentContext } from '../contentProvider';
 import apiService from '../apiService'
 
 
-export default function DeletePrompt(props) {
-	const { deletePost, setOverlay } = useContext(OverlayContext);
-	const { setContent } = useContext(ContentContext);
 
-	function confirmDeleteClick(){
-		apiService.deletePost(deletePost)
-		.then(
-			setContent('Dashboard'),
-			setOverlay('Navbar'),
+export default function DeletePrompt(props) {
+	const { deletePost, setDeletePost, setOverlay } = useContext(OverlayContext);
+	const { profile, setProfile, setContent } = useContext(ContentContext);
+
+	function updateProfile(username) {
+		apiService.getProfile(username).then(
+			(res) => {
+				setOverlay('Navbar');
+				setProfile(res);
+				setContent('Profile');
+			}
 		)
+	}
+
+	function returnToNavbar() {
+		setOverlay('Navbar')
+	}
+
+	function confirmDeleteClick() {
+		console.log('clicked')
+		apiService.deletePost(deletePost._id)
+			.then((res) => {
+				setDeletePost({});
+				updateProfile(profile.username)
+			})
+			.catch((err) => updateProfile(profile.username))
 	}
 
 	return (
 		<div className="DeletePrompt Menu">
 			<h3 className="title-text"> Are you sure you want to delete this post? </h3>
-			<button className="confirm-delete">Delete post</button>
+			<button className="confirm-delete" onClick={confirmDeleteClick}>Delete post</button>
+			<button onClick={returnToNavbar}>Cancel</button>
 		</div>
 	)
 }
