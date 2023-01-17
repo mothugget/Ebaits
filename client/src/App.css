@@ -79,23 +79,19 @@ select {
 
 @media only screen and (min-width: 650px) {
   .ThumbnailList {
-  position: relative;
-    left: 0px;
-    display: grid;
-    gap: 1px;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(100px, auto);
   }
 }
 
 @media only screen and (min-width: 850px) {
   .ThumbnailList {
-    position: relative;
-    left: 0px;
-    display: grid;
-    gap: 1px;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(100px, auto);
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+  .ThumbnailList {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
@@ -131,17 +127,18 @@ select {
   width: 100%;
   z-index: 1;
 }
+
 .delete-button {
   position: absolute;
   top: 8%;
   right: 16%;
-  width:15%;
-  height:15%;
+  width: 15%;
+  height: 15%;
   z-index: 10;
 }
 
 .delete-icon {
-  position:relative;
+  position: relative;
   height: 100%;
 }
 
@@ -221,7 +218,7 @@ select {
 }
 
 
-.header-profile-button-image{
+.header-profile-button-image {
   width: 45px;
   margin-top: 15px;
   clip-path: circle(50% at 50% 50%);
