@@ -15,4 +15,6 @@ const countries = Object.keys(countriesUnordered).sort().reduce(
     {}
 );
 
+countries["The Streets"] = 'FR'
+
 export default  countries

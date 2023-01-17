@@ -16,7 +16,7 @@ export default function Profile(props) {
 				<img className='profile-image' src={image} alt='profile' />
 				<div className='profile-info'>
 					<span className='title-text'>{profile.username}</span> <br /><br />
-					<span className='category-text'>Country: </span> {profile.country} <br />
+					<span className='category-text'>Country: </span> <br />{profile.country} <br />
 				</div>
 			</div>
 			<ThumbnailList posts={profile.posts}/>
