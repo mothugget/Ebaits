@@ -19,6 +19,15 @@ const apiService = {
             .then((res) => res.json())
             .catch((err) => console.log(err));
     },
+    getProfileByUserId: (_id) => {
+        return fetch(`${BASE_URL}/user/id/${_id}`, {
+            method: 'GET',
+            mode: 'cors',
+            headers: { 'Content-Type': 'application/json' },
+        })
+            .then((res) => res.json())
+            .catch((err) => console.log(err));
+    },
     getProfileSignin: (email) => {
         return fetch(`${BASE_URL}/user/signin/${email}`, {
             method: 'GET',

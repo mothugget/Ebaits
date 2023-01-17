@@ -5,6 +5,7 @@ import { getPosts, createPost, deletePost } from './controllers/post.js';
 const router = express.Router();
 
 router.get('/user/:username', getUser);
+router.get('/user/id/:_id', getUser);
 router.get('/user/signin/:email', getUser)
 router.post('/user', postUser);
 router.delete('/user/:username', deleteUser);
