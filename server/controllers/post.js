@@ -7,7 +7,7 @@ const getPosts = async (req, res) => {
     try {
         const post = await Post.find()
             .sort({createdAt:1})
-            .limit(20)
+            .limit(50)
             .populate("user");
         res.status(200);
         res.send(post.reverse());

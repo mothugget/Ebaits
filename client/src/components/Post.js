@@ -9,14 +9,13 @@ import { OverlayContext } from '../overlayProvider'
 
 
 export default function Post(props) {
-	const [username, setUsername] = useState();
 
-	const { setContent, post, setProfile } = useContext(ContentContext);
+	const { setContent, post, setPost, setProfile } = useContext(ContentContext);
 	const { setOverlay } = useContext(OverlayContext);
 
 	const image = post.imgid[0] ||= defaultPostImg;
 	function profileClick() {
-		apiService.getProfileByUserId(post.user._id||post.user).then(
+		apiService.getProfileByUserId(post.user._id || post.user).then(
 			(res) => {
 				if (res.error) {
 					console.log(res.error)
@@ -32,13 +31,16 @@ export default function Post(props) {
 	//were accessed through profile thumbnails. Need this to get username. Annoying  to do an extra api call,
 	//but thems the breaks.
 	useEffect(() => {
-		post.user.username || apiService.getProfileByUserId(post.user).then(res => setUsername(res.username))
+		post.user.username || apiService.getProfileByUserId(post.user)
+			.then(res => {
+				setPost({...post,user:res})
+			})
 	}, [])
 
 
 	return (
 		<div className="Post">
-			<button className='baitbuilder' onClick={profileClick}>{post.user.username || username}</button>
+			<button className='baitbuilder' onClick={profileClick}>{post.user.username}</button>
 			<img className="post-image" src={image} alt="Post" />
 			<div className='post-info'>
 				<span className='title-text'>{post.name}</span> <br />
