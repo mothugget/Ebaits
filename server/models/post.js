@@ -1,6 +1,6 @@
 'use strict';
 
-import mongoose from '../db.js';
+import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
