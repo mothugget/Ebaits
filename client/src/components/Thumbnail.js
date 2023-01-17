@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 
-import countries from '../countries'
+import countries from '../utils/countries'
 import defaultThumbnailImg from '../images/default/altPostImg.jpg'
 import DeleteButton from './DeleteButton';
 import { ContentContext } from '../contentProvider'

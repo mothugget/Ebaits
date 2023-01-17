@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 
-import countries from '../countries';
+import countries from '../utils/countries';
 import apiService from '../apiService'
 import LogoutButton from './LogoutButton'
 import UploadWidget from './UploadWidget';

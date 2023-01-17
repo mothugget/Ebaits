@@ -21,7 +21,7 @@ button {
   font-weight: 800;
   font-size: 20px;
   background-color: rgba(255, 255, 255, 0);
-  color: rgb(5, 0, 137);
+  color: rgb(77, 77, 77);
   -webkit-text-stroke-width: 0.07em;
   -webkit-text-stroke-color: rgb(0, 0, 0);
 }
@@ -181,14 +181,28 @@ select {
   z-index: 10;
 }
 
+.Navbar {
+  display: flex;
+  justify-content: center;
+}
+
 .header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 100vw;
   height: 63px;
   background-color: white;
   border-style: none;
   position: fixed;
   top: 0;
+}
 
+
+.header-profile-button-image{
+  width: 45px;
+  margin-top: 15px;
+  clip-path: circle(50% at 50% 50%);
 }
 
 .logo-home-button {
@@ -196,19 +210,11 @@ select {
   margin: 0;
   background-color: white;
   border-style: none;
-  position: absolute;
-  left: 0;
 }
 
 .logo-image {
   margin-top: 5px;
   height: 50px
-}
-
-.Navbar {
-  display: flex;
-  justify-content: center;
-
 }
 
 .footer {
