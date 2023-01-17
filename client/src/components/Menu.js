@@ -26,9 +26,13 @@ export default function Menu(props) {
 		setContent('Dashboard');
 		setOverlay('Navbar')
 	}
-	
+
 	const createPostClick = () => {
 		setOverlay('NewPost')
+	}
+
+	const deleteAccountClick = () => {
+		setOverlay('DeleteUserPrompt')
 	}
 
 	return (
@@ -36,7 +40,10 @@ export default function Menu(props) {
 			<SearchInput />
 			<LoginButton />
 			<LogoutButton />
-			{isAuthenticated && <button onClick={createPostClick}>Create post</button>}
+			{isAuthenticated &&<>
+				<button onClick={createPostClick}>Create post</button>
+				<button onClick={deleteAccountClick}>Delete account</button>
+			</>}
 			<button onClick={homeClick}>Home</button>
 		</div>
 	)

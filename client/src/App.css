@@ -262,7 +262,7 @@ select {
   transform: translate(-50%, -50%);
 
   height: fit-content;
-  width: fit-content;
+  width: 300px;
   padding: 15px;
   background-color: white;
   border-style: solid;

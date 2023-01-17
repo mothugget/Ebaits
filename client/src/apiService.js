@@ -57,6 +57,15 @@ const apiService = {
             .then((res) => res.json())
             .catch((err) => console.log(err));
     },
+    deleteUser: (username) => {
+        return fetch(`${BASE_URL}/user/${username}`, {
+            method: 'DELETE',
+            mode: 'cors',
+            headers: { 'Content-Type': 'application/json' },
+        })
+            .then((res) => res.json())
+            .catch((err) => console.log(err));
+    },
 };
 
 export default apiService

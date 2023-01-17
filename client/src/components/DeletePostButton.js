@@ -9,7 +9,7 @@ export default function DeleteButton(props) {
 
     function deleteClick(post) {
         setDeletePost(post);
-        setOverlay('DeletePrompt')
+        setOverlay('DeletePostPrompt')
     }
 
   return (

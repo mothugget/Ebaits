@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 
 import countries from '../utils/countries'
 import defaultThumbnailImg from '../images/default/altPostImg.jpg'
-import DeleteButton from './DeleteButton';
+import DeletePostButton from './DeletePostButton';
 import { ContentContext } from '../contentProvider'
 
 export default function Thumbnail(props) {
@@ -37,7 +37,7 @@ export default function Thumbnail(props) {
 				<img className="thumbnail-image" src={image} alt="Thumbnail" />
 				{props.source === 'dash' && <div className='country-emoji'>{emoji}</div>}
 			</button>
-			{props.source != 'dash' && profile._id===currUser._id&&<DeleteButton post={props.post}/>}
+			{props.source != 'dash' && profile._id===currUser._id&&<DeletePostButton post={props.post}/>}
 		</div>
 	)
 }

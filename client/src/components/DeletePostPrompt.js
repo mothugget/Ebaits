@@ -26,7 +26,6 @@ export default function DeletePrompt(props) {
 	}
 
 	function confirmDeleteClick() {
-		console.log('clicked')
 		apiService.deletePost(deletePost._id)
 			.then((res) => {
 				setDeletePost({});
@@ -36,7 +35,7 @@ export default function DeletePrompt(props) {
 	}
 
 	return (
-		<div className="DeletePrompt Menu">
+		<div className="DeletePostPrompt Menu">
 			<h3 className="title-text"> Are you sure you want to delete this post? </h3>
 			<button className="confirm-delete" onClick={confirmDeleteClick}>Delete post</button>
 			<button onClick={returnToNavbar}>Cancel</button>

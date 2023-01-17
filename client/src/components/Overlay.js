@@ -7,7 +7,8 @@ import Menu from './Menu';
 import NewPost from './NewPost';
 import Register from './Register';
 import EditUser from './EditUser';
-import DeletePrompt from './DeletePrompt';
+import DeletePostPrompt from './DeletePostPrompt';
+import DeleteUserPrompt from './DeleteUserPrompt';
 
 export default function Overlay(props) {
 	const { overlay } = useContext(OverlayContext);
@@ -45,13 +46,19 @@ export default function Overlay(props) {
 					<EditUser />
 				</div>
 			)
-		case 'DeletePrompt':
+		case 'DeletePostPrompt':
 			return (
 				<div className="Overlay">
 					<NavbarButton />
-					<DeletePrompt />
+					<DeletePostPrompt />
 				</div>
 			)
-
+		case 'DeleteUserPrompt':
+			return (
+				<div className="Overlay">
+					<NavbarButton />
+					<DeleteUserPrompt />
+				</div>
+			)
 	}
 }
