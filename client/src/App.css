@@ -5,6 +5,10 @@
   src: url(fonts/Comfortaa-Bold.ttf);
 }
 
+:root {
+  --thumbnailSize: min(200px, 45vw);
+}
+
 .App {
   font-family: Comforta;
   font-size: 16px;
@@ -15,7 +19,7 @@ button {
   border-style: none;
   font-family: Comforta;
   font-weight: 800;
-  font-size: 25px;
+  font-size: 20px;
   background-color: rgba(255, 255, 255, 0);
   color: rgb(5, 0, 137);
   -webkit-text-stroke-width: 0.07em;
@@ -61,7 +65,7 @@ select {
 
 .title-text {
   color: rgb(0, 0, 0);
-  font-size: 24px;
+  font-size: 25px;
 }
 
 .ThumbnailList {
@@ -73,30 +77,50 @@ select {
   grid-auto-rows: minmax(100px, auto);
 }
 
+.Thumbnail {
+  position: relative;
+}
+
 .thumbnail-button {
+  position: relative;
   display: flex;
   margin: 5px;
-  height: fit-content;
-  width: fit-content;
+  height: var(--thumbnailSize);
+  width: var(--thumbnailSize);
   padding: 0;
   border-style: hidden;
   border-radius: 30px;
   overflow: hidden;
 }
 
+
+
 .country-emoji {
-  position: relative;
+  position: absolute;
   color: white;
-  font-size: 10vw;
+  font-size: calc(var(--thumbnailSize)/6);
   width: 0;
-  left: -15vw;
-  top: 32vw;
+  right: 25%;
+  bottom: 5%;
   z-index: 5;
 }
 
 .thumbnail-image {
-  width: 45vw;
+  width: 100%;
   z-index: 1;
+}
+.delete-button {
+  position: absolute;
+  top: 8%;
+  right: 16%;
+  width:10%;
+  height:10%;
+  z-index: 10;
+}
+
+.delete-icon {
+  position:relative;
+  height: 100%;
 }
 
 .Post {
@@ -116,13 +140,14 @@ select {
 }
 
 .profile-image {
+  clip-path: circle(50% at 50% 50%);
   width: min(45vw, 300px);
   height: min(45vw, 300px);
 }
 
 .profile-info-container {
-  width: 100vw;
-  height: min(45vw, 300px);
+  width: min(45vh, 500px);
+  height: min(45vw, 500px);
   display: flex;
   align-items: center;
 }

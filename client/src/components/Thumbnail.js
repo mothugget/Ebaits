@@ -2,10 +2,16 @@ import { useState, useEffect, useContext } from 'react';
 
 import countries from '../countries'
 import defaultThumbnailImg from '../images/default/altPostImg.jpg'
+import DeleteButton from './DeleteButton';
 import { ContentContext } from '../contentProvider'
 
 export default function Thumbnail(props) {
-	const { setContent, setPost} = useContext(ContentContext);
+	const {
+		setContent,
+		setPost,
+		profile,
+		currUser
+	} = useContext(ContentContext);
 	const thumbnailClick = () => {
 		setContent('Post');
 		setPost(props.post);
@@ -23,13 +29,15 @@ export default function Thumbnail(props) {
 	const image = props.post.imgid[0] ||= defaultThumbnailImg;
 
 	let emoji = props.source === 'dash' && getFlagEmoji(countries[props.post.user.country])
-	
+
 	return (
 		<div className="Thumbnail">
+
 			<button className='thumbnail-button' onClick={thumbnailClick}>
 				<img className="thumbnail-image" src={image} alt="Thumbnail" />
-				{props.source==='dash'&&<div className='country-emoji'>{emoji}</div>}
+				{props.source === 'dash' && <div className='country-emoji'>{emoji}</div>}
 			</button>
+			{props.source != 'dash' && profile._id===currUser._id&&<DeleteButton post={props.post}/>}
 		</div>
 	)
 }

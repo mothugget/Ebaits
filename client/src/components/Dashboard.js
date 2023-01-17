@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import Thumbnail from './Thumbnail';
+
 import ThumbnailList from "./ThumbnailList";
 import apiService from '../apiService';
 

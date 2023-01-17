@@ -1,11 +1,11 @@
-import { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 
 
 import apiService from '../apiService';
 import defaultPostImg from '../images/default/altPostImg.jpg'
 import { ContentContext } from '../contentProvider'
 import { OverlayContext } from '../overlayProvider'
-import UploadWidget from './UploadWidget';
+
 
 
 export default function Post(props) {

@@ -1,8 +1,7 @@
 import { useContext, useState } from 'react';
 
-import countries from '../countries';
+
 import apiService from '../apiService'
-import LogoutButton from './LogoutButton'
 import { ContentContext } from '../contentProvider';
 import { OverlayContext } from '../overlayProvider';
 import UploadWidget from './UploadWidget';

@@ -23,7 +23,7 @@ export default function UploadWidget(props) {
     }, []);
 
     return (
-        <button className="" onClick={() => widgetRef.current.open()} >
+        <button className='widget-button' onClick={() => widgetRef.current.open()} >
             Upload image
         </button>
     )

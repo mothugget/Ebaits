@@ -2,13 +2,13 @@ import { useContext } from 'react';
 
 import defaultProfileImg from '../images/default/altProfilePic.jpg'
 import { ContentContext } from '../contentProvider'
-import { OverlayContext } from '../overlayProvider'
+
 import ThumbnailList from './ThumbnailList';
 
 
 export default function Profile(props) {
-	const { setContent, profile } = useContext(ContentContext);
-	const { setOverlay } = useContext(OverlayContext);
+	const { profile } = useContext(ContentContext);
+
 	const image = profile.picid ||= defaultProfileImg;
 	return (
 		<div className="Profile">

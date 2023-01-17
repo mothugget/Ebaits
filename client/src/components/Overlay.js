@@ -10,7 +10,7 @@ import EditUser from './EditUser';
 import DeletePrompt from './DeletePrompt';
 
 export default function Overlay(props) {
-	const { overlay, setOverlay } = useContext(OverlayContext);
+	const { overlay } = useContext(OverlayContext);
 
 	switch (overlay) {
 		case 'Navbar':
@@ -48,6 +48,7 @@ export default function Overlay(props) {
 		case 'DeletePrompt':
 			return (
 				<div className="Overlay">
+					<NavbarButton />
 					<DeletePrompt />
 				</div>
 			)
