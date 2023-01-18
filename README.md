@@ -3,7 +3,7 @@ Marketplace for baitbuilders
 
 ## Scripts
 
-### gulp `populateComponents`
+### `gulp populateComponents`
 
 Will create react functional components in any empty js files in the component directory, using the file name as the component name.
 
