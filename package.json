@@ -18,6 +18,7 @@
   "homepage": "https://github.com/mothugget/Ebaits#readme",
   "dependencies": {
     "chalk": "^5.2.0",
+    "cloudinary": "^1.33.0",
     "country-codes-list": "^1.6.10",
     "dotenv": "^16.0.3",
     "gulp": "^4.0.2",

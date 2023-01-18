@@ -50,7 +50,6 @@ export default function Register(props) {
 	}
 	return (
 		<div className="Register Menu" >
-			{imageURL && <img src={imageURL} className={'uploaded-image'} alt='uploaded image' />}
 			<div className='title-text'>Register</div>
 			<UploadWidget setImageURL={setImageURL}/>
 			<form className='registration-form' onSubmit={handleSubmit}>

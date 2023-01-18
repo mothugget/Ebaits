@@ -40,7 +40,6 @@ export default function NewPost(props) {
 
 	return (
 		<div className="NewPost Menu">
-			{imageURL&&<img src={imageURL} className={'uploaded-image'} alt='uploaded image'/>}
 			<div className='title-text'>Post your bait</div>
 			<UploadWidget setImageURL={setImageURL} />
 			<form className='post-form' onSubmit={handleSubmit}>
