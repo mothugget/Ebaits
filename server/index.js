@@ -22,7 +22,7 @@ const PORT = process.env.PORT;
 
 app.use(cors());
 app.use(express.json());
-app.use(router); 
+app.use(router);
 
 mongoose.connect(
 
@@ -40,6 +40,6 @@ mongoose.connect(
     }
 );
 
-export default mongoose;  
+export default mongoose;
 
 

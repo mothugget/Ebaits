@@ -6,9 +6,9 @@ const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
     user: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-    required:true
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true
     },
     name: String,
     type: String,
@@ -16,7 +16,7 @@ const postSchema = new Schema({
     weight: Number,
     imgid: [String]
 },
-{timestamps: true});
+    { timestamps: true });
 
 const Post = mongoose.model('Post', postSchema);
 

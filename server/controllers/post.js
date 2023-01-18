@@ -6,7 +6,7 @@ import User from '../models/user.js';
 const getPosts = async (req, res) => {
     try {
         const post = await Post.find()
-            .sort({createdAt:1})
+            .sort({ createdAt: 1 })
             .limit(50)
             .populate("user");
         res.status(200);

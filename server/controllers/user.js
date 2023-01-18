@@ -9,7 +9,7 @@ const getUser = async (req, res) => {
     try {
         let resUser = await User.findOne(req.params).populate("posts");
         res.status(200);
-        !resUser && (resUser ={
+        !resUser && (resUser = {
             error: "No such user"
         });
         res.send(resUser);
