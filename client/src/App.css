@@ -239,6 +239,7 @@ select {
   margin: 0;
   background-color: white;
   border-style: none;
+  border-radius: 5px;
 }
 
 .logo-image {
