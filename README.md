@@ -6,7 +6,7 @@ A marketplace for baitbuilders
 ## Getting Started with the server
 
 
-Run the server/index.js file in node. Then just install all the dependencies til it stops crashing. So far I had:
+Run the server/index.js file in node. Then just install all the dependencies until it stops crashing. So far I had:
 
 `npm i express`
 
