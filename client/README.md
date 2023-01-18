@@ -1,28 +1,32 @@
-# Getting Started with Ebait Client
+# Getting Started with the Ebait client
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# API connection
+## API connection
 
-The adress and port of the server need to be added to the .env file. See [.env.sample](./env.sample).
+The adress and port of the server need to be added to the .env file. See the .env.sample file for tne correct variable names.
 
-# Authentication
+## Authentication
 
 The authentication is handled with Auth0. [An account can be made here.](https://auth0.com/)
 
-The domain and client ID need to be added to the .env file. See [.env.sample](./env.sample).
+The domain and client ID need to be added to the .env file. See the .env.sample file for tne correct variable names.
 
-# Image hosting
+## Image hosting
 
 Image hosting is done through cloudinary. [An account can be made here.](https://cloudinary.com/)
 
-The domain and client ID need to be added to the .env file. See [.env.sample](./env.sample).
+The domain and client ID need to be added to the .env file. See the .env.sample file for tne correct variable names.
 
 The app does not delete images from the cloudinary storage. 
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `gulp populateComponents`
+
+Will create react functional components in any empty js files in the component directory, using the file name as the component name.
 
 ### `npm start`
 
