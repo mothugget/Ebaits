@@ -1,11 +1,7 @@
 # Ebaits
-Marketplace for baitbuilders
 
-## Scripts
+A marketplace for baitbuilders
 
-### `gulp populateComponents`
-
-Will create react functional components in any empty js files in the component directory, using the file name as the component name.
 
 ## Getting Started with the server
 
@@ -60,5 +56,11 @@ Image hosting is done through cloudinary. [An account can be made here.](https:/
 The domain and client ID need to be added to the .env file. See the .env.sample file for tne correct variable names.
 
 The app does not delete images from the cloudinary storage.
+
+## Scripts
+
+### `gulp populateComponents`
+
+Will create react functional components in any empty js files in the component directory, using the file name as the component name.
 
 
