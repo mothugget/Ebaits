@@ -11,6 +11,14 @@ Will create react functional components in any empty js files in the component d
 
 The server port must be entered in the .env file. See the .env.sample file for tne correct variable names.
 
+Run the server/index.js file in node. Then just install all the dependencies til it stops crashing. So far I had:
+
+`npm i express`
+`npm i mongoose`
+`npm i cors `
+
+Then add your values to a /server/.env file (checkout .env.sample) and you should be good.
+
 ### Database
 
 In order for this server to function you must have MongodDB installed and running on your system.
@@ -20,6 +28,18 @@ For more info: [Installing MongoDB](https://www.mongodb.com/docs/manual/installa
 The database connecting port as well as the name of your database must be entered in the .env file. See the .env.sample file for tne correct variable names.
 
 ## Getting Started with the Ebait client
+
+Go to the client directory. Run
+
+`npm i`
+
+ then 
+ 
+ `npm i @auth0/auth0-react`
+
+Then add your values to a /client/.env file (checkout .env.sample) and run
+
+`npm start`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
