@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 
 import Content from './components/Content';
@@ -18,23 +18,23 @@ function App() {
     isAuthenticated ?
       apiService.getProfileSignin(user.name)
         .then(res => {
-          if(res.error === 'No such user'){
+          if (res.error === 'No such user') {
             setOverlay('Register');
-            setCurrUser({email:user.name})
-          }else{
+            setCurrUser({ email: user.name })
+          } else {
             setCurrUser(res)
           }
         })
       : setCurrUser({})
-  }, [isAuthenticated])
+  }, [isAuthenticated, setCurrUser, setOverlay])
 
   return (
-    loading?
-    <div>loading....</div>
-    :<div className="App">
-      <Content />
-      <Overlay />
-    </div>
+    loading ?
+      <div>loading....</div>
+      : <div className="App">
+        <Content />
+        <Overlay />
+      </div>
   );
 }
 

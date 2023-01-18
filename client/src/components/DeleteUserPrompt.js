@@ -9,9 +9,9 @@ import apiService from '../apiService'
 
 export default function DeleteUserPrompt(props) {
 
-    const { deletePost, setDeletePost, setOverlay } = useContext(OverlayContext);
-    const { currUser, setContent } = useContext(ContentContext);
-    const { logout, isAuthenticated } = useAuth0();
+    const { setOverlay } = useContext(OverlayContext);
+    const { currUser } = useContext(ContentContext);
+    const { logout } = useAuth0();
 
     function confirmDeleteClick() {
         apiService.deleteUser(currUser.username)

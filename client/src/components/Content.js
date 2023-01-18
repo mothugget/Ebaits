@@ -1,15 +1,12 @@
-import { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 
 import { ContentContext } from '../contentProvider'
-import { OverlayContext } from '../overlayProvider'
 import Dashboard from './Dashboard';
 import Profile from './Profile'
 import Post from './Post';
-import SignUp from './Register';
 
 export default function Content(props) {
-    const { content,  } = useContext(ContentContext);
-    const { overlay,  } = useContext(OverlayContext)
+    const { content } = useContext(ContentContext);
 
 
 
@@ -23,8 +20,8 @@ export default function Content(props) {
         case 'Post':
             return (
                 <div className={'Content'}>
-                <Post />
-            </div>
+                    <Post />
+                </div>
             )
         case 'Profile':
             return (
@@ -32,6 +29,8 @@ export default function Content(props) {
                     <Profile />
                 </div>
             )
+        default:
+            console.log('ERROR: component failed to load: ', content);
     }
 
 }

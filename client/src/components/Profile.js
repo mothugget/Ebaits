@@ -19,7 +19,7 @@ export default function Profile(props) {
 					<span className='category-text'>Country: </span> <br />{profile.country} <br />
 				</div>
 			</div>
-			<ThumbnailList posts={profile.posts}/>
+			<ThumbnailList posts={profile.posts} />
 		</div>
 	)
 }

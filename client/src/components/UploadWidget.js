@@ -1,6 +1,9 @@
 import { useEffect, useRef } from "react"
 
 
+
+
+
 export default function UploadWidget(props) {
     const cloudinaryRef = useRef();
     const widgetRef = useRef();
@@ -12,13 +15,12 @@ export default function UploadWidget(props) {
         cloudinaryRef.current = window.cloudinary;
         widgetRef.current = cloudinaryRef.current.createUploadWidget({
             cloudName: myCloudName,
-            uploadPreset: myUploadPreset,
-            multiple: false
+            uploadPreset: myUploadPreset
         }, function (error, result) {
             error && console.log('Image upload error: ', error);
-            (result.event==='success')&&props.setImageURL(result.info.url);
+            (result.event === 'success') && props.setImageURL(result.info.url);
         })
-    }, []);
+    }, [myCloudName, myUploadPreset, props]);
 
     return (
         <button className='widget-button' onClick={() => widgetRef.current.open()} >

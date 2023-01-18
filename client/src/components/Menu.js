@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import { useContext } from 'react'
 import { useAuth0 } from "@auth0/auth0-react";
 
 
@@ -13,14 +13,6 @@ export default function Menu(props) {
 	const { setContent, } = useContext(ContentContext);
 	const { setOverlay } = useContext(OverlayContext);
 	const { isAuthenticated } = useAuth0();
-
-	function logIn() {
-
-	}
-
-	function register() {
-
-	}
 
 	const homeClick = () => {
 		setContent('Dashboard');
@@ -40,7 +32,7 @@ export default function Menu(props) {
 			<SearchInput />
 			<LoginButton />
 			<LogoutButton />
-			{isAuthenticated &&<>
+			{isAuthenticated && <>
 				<button onClick={createPostClick}>Create post</button>
 				<button onClick={deleteAccountClick}>Delete account</button>
 			</>}

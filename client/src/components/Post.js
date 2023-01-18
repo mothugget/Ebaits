@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 
 
 import apiService from '../apiService';
@@ -33,9 +33,9 @@ export default function Post(props) {
 	useEffect(() => {
 		post.user.username || apiService.getProfileByUserId(post.user)
 			.then(res => {
-				setPost({...post,user:res})
+				setPost({ ...post, user: res })
 			})
-	}, [post])
+	}, [post, setPost])
 
 
 	return (

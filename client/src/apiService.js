@@ -1,14 +1,13 @@
-
-import * as Cloudinary from 'cloudinary'
+// import cloudinary from 'cloudinary';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-cloudinary.config({
-    cloud_name: process.env.REACT_APP_CLOUD_DOMAIN,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.YOUR_CLOUDINARY_API_SECRET,
-    secure: true,
-});
+// cloudinary.config({
+//     cloud_name: process.env.REACT_APP_CLOUD_DOMAIN,
+//     api_key: process.env.REACT_APP_CLOUD_DOMAIN,
+//     api_secret: process.env.REACT_APP_CLOUD_DOMAIN,
+//     secure: true,
+// });
 
 const apiService = {
     populateDashboard: () => {
@@ -67,15 +66,15 @@ const apiService = {
             .then((res) => res.json())
             .catch((err) => console.log(err));
     },
-    // deletePost: (post) => {
-    //     return fetch(`${BASE_URL}/post/${_id}`, {
-    //         method: 'DELETE',
-    //         mode: 'cors',
-    //         headers: { 'Content-Type': 'application/json' },
-    //     })
-    //         .then((res) => res.json())
-    //         .catch((err) => console.log(err));
-    // },
+    deletePost: (_id) => {
+        return fetch(`${BASE_URL}/post/${_id}`, {
+            method: 'DELETE',
+            mode: 'cors',
+            headers: { 'Content-Type': 'application/json' },
+        })
+            .then((res) => res.json())
+            .catch((err) => console.log(err));
+    },
     deleteUser: (username) => {
         return fetch(`${BASE_URL}/user/${username}`, {
             method: 'DELETE',
@@ -85,18 +84,6 @@ const apiService = {
             .then((res) => res.json())
             .catch((err) => console.log(err));
     },
-    deleteImg: (imgURL) => {
-        const publicId = urlParser(imgURL);
-        // return cloudinary.v2.uploader.destroy(publicId)
-        // .then(res => res )
-        // .catch(err=> console.log(err));
-    }
 };
 
 export default apiService
-
-function urlParser(imageURL) {
-    const urlArr = imageURL.split('/');
-    const idWithExt = urlArr.pop();
-    return idWithExt.slice(0, idWithExt.length - 4)
-}

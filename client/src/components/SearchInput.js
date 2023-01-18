@@ -12,19 +12,19 @@ export default function SearchInput(props) {
 
 	function handleSubmit(event) {
 		event.preventDefault();
-		event.target[0].value === '' || 
-		apiService.getProfile(event.target[0].value).then(
-			(res) => {
-				if (res.error) {
-					setError(res.error);
-				} else {
-					setError(' ');
-					setOverlay('Navbar');
-					setProfile(res);
-					setContent('Profile')
+		event.target[0].value === '' ||
+			apiService.getProfile(event.target[0].value).then(
+				(res) => {
+					if (res.error) {
+						setError(res.error);
+					} else {
+						setError(' ');
+						setOverlay('Navbar');
+						setProfile(res);
+						setContent('Profile')
+					}
 				}
-			}
-		);
+			);
 	}
 
 	return (

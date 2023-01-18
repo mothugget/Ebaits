@@ -26,7 +26,7 @@ export default function DeletePrompt(props) {
 	}
 
 	function confirmDeleteClick() {
-		apiService.deletePost(deletePost)
+		apiService.deletePost(deletePost._id)
 			.then((res) => {
 				setDeletePost({});
 				updateProfile(profile.username)

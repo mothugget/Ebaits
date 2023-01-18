@@ -19,11 +19,11 @@ root.render(
       clientId={clientId}
       redirectUri={window.location.origin}
     >
-        <ContentProvider>
-          <OverlayProvider>
-            <App />
-          </OverlayProvider>
-        </ContentProvider>
+      <ContentProvider>
+        <OverlayProvider>
+          <App />
+        </OverlayProvider>
+      </ContentProvider>
     </Auth0Provider>
   </React.StrictMode >
 );

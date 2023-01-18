@@ -1,5 +1,5 @@
 'use strict';
-
+import cloudinary from 'cloudinary';
 import Post from '../models/post.js';
 import User from '../models/user.js';
 

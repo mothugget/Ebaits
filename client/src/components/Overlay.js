@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 
 import { OverlayContext } from '../overlayProvider'
 import Navbar from "./Navbar";
@@ -6,7 +6,6 @@ import NavbarButton from './NavbarButton';
 import Menu from './Menu';
 import NewPost from './NewPost';
 import Register from './Register';
-import EditUser from './EditUser';
 import DeletePostPrompt from './DeletePostPrompt';
 import DeleteUserPrompt from './DeleteUserPrompt';
 
@@ -24,7 +23,7 @@ export default function Overlay(props) {
 			return (
 				<div className="Overlay">
 					<NavbarButton />
-					<Menu/>	
+					<Menu />
 				</div>
 			)
 		case 'NewPost':
@@ -38,12 +37,6 @@ export default function Overlay(props) {
 			return (
 				<div className="Overlay">
 					<Register />
-				</div>
-			)
-		case 'EditUser':
-			return (
-				<div className="Overlay">
-					<EditUser />
 				</div>
 			)
 		case 'DeletePostPrompt':
@@ -60,5 +53,7 @@ export default function Overlay(props) {
 					<DeleteUserPrompt />
 				</div>
 			)
+		default:
+			console.log('ERROR: component failed to load: ', overlay);
 	}
 }

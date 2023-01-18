@@ -36,13 +36,13 @@ export default function Register(props) {
 		newUser.newUser.username ?
 			apiService.createUser(newUser)
 				.then(res => {
-					if(res.username){
+					if (res.username) {
 						setCurrUser(res);
 						setProfile(res);
 						setContent('Profile');
 						setOverlay('Navbar')
 
-					}else{
+					} else {
 						setError('Username taken')
 					}
 				})
@@ -50,8 +50,9 @@ export default function Register(props) {
 	}
 	return (
 		<div className="Register Menu" >
+			{imageURL && <img src={imageURL} className={'uploaded-image'} alt='uploaded' />}
 			<div className='title-text'>Register</div>
-			<UploadWidget setImageURL={setImageURL}/>
+			<UploadWidget setImageURL={setImageURL} />
 			<form className='registration-form' onSubmit={handleSubmit}>
 
 				<input type="text" name='Username' placeholder='Username' />

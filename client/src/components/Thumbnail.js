@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 
 import countries from '../utils/countries'
 import defaultThumbnailImg from '../images/default/altPostImg.jpg'
@@ -37,7 +37,7 @@ export default function Thumbnail(props) {
 				<img className="thumbnail-image" src={image} alt="Thumbnail" />
 				{props.source === 'dash' && <div className='country-emoji'>{emoji}</div>}
 			</button>
-			{props.source != 'dash' && profile._id===currUser._id&&<DeletePostButton post={props.post}/>}
+			{props.source !== 'dash' && profile._id === currUser._id && <DeletePostButton post={props.post} />}
 		</div>
 	)
 }

@@ -8,13 +8,13 @@ export default function Dashboard(props) {
 	const [dashboardPosts, setDashboardPosts] = useState([])
 	useEffect(() => {
 		apiService.populateDashboard().then(
-			(posts) => {setDashboardPosts(posts)}
+			(posts) => { setDashboardPosts(posts) }
 		);
 	}, [])
 
 	return (
 		<div className="Dashboard">
-			<ThumbnailList source={'dash'} posts={dashboardPosts}/>
+			<ThumbnailList source={'dash'} posts={dashboardPosts} />
 		</div>
 	)
 }
