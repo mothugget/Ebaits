@@ -1,13 +1,7 @@
-// import cloudinary from 'cloudinary';
+
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-// cloudinary.config({
-//     cloud_name: process.env.REACT_APP_CLOUD_DOMAIN,
-//     api_key: process.env.REACT_APP_CLOUD_DOMAIN,
-//     api_secret: process.env.REACT_APP_CLOUD_DOMAIN,
-//     secure: true,
-// });
 
 const apiService = {
     populateDashboard: () => {

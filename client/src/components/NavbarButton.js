@@ -11,6 +11,6 @@ export default function NavbarButton(props) {
     }
 
     return (
-        <div className="navbar-button" onClick={returnToNavbar}> </div>
+        <button className="navbar-button" onClick={returnToNavbar}> </button>
     )
 }

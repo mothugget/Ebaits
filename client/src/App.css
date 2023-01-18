@@ -26,6 +26,16 @@ button {
   -webkit-text-stroke-color: rgb(0, 0, 0);
 }
 
+button:hover{
+  cursor: pointer;
+  filter: invert(15%);
+  color: white;
+}
+
+.navbar-button:hover{
+    background-color: rgba(0, 0, 0, 0.172);
+}
+
 form button {
   font-size: 16px;
   color: black;
