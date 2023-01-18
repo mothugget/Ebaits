@@ -5,12 +5,13 @@ A marketplace for baitbuilders
 
 ## Getting Started with the server
 
-The server port must be entered in the .env file. See the .env.sample file for tne correct variable names.
 
 Run the server/index.js file in node. Then just install all the dependencies til it stops crashing. So far I had:
 
 `npm i express`
+
 `npm i mongoose`
+
 `npm i cors `
 
 Then add your values to a /server/.env file (checkout .env.sample) and you should be good.
